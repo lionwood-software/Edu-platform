@@ -1,0 +1,20 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/system/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9004
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/system/{everything}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "SchoolKey",
+        "AllowedScopes": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/system/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identity",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/system/{everything}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityKey",
+        "AllowedScopes": []
+      }
+    }
+  ]
+}

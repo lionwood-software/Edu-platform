@@ -1,0 +1,36 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/requests/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "router-api",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/requests/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "RouterKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/requests",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "router-api",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/requests",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "RouterKey",
+        "AllowedScopes": []
+      }
+    }
+  ]
+}
